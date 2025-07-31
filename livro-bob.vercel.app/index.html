@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #232f3e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo img {
+            height: 35px;
+        }
+
+        .header .user-cart {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+         .header .user-cart img {
+            width: 18px; /* Largura padrão */
+            height: 18px; /* Altura padrão */
+            vertical-align: middle; /* Alinha o ícone verticalmente com o texto */
+        }
+
+
+        .header .user-cart a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .header .search {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            width: 100%;
+            order: 2;
+        }
+
+        .header .search input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 14px;
+        }
+
+        .header .search button {
+            background-color: #f3a847;
+            border: none;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .header .search button img {
+            height: 16px;
+        }
+
+        .location-bar {
+            background-color: #37475a;
+            color: white;
+            padding: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .location-bar img {
+            margin-right: 5px;
+            height: 15px;
+        }
+
+        .location-bar span {
+            color: #f3a847;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .header {
+                flex-wrap: nowrap;
+            }
+
+            .header .search {
+                width: auto;
+                margin: 0 15px;
+                order: 0;
+            }
+
+            .header .user-cart {
+                font-size: 14px;
+            }
+
+            .location-bar {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header"style="margin: 0;">
+        <div class="logo">
+            <img src="images/logoamazon1.png" alt="Amazon Logo">.com.br
+        </div>
+        <div class="user-cart">
+            <a href="#">Faça seu login</a>
+            <a href="#">
+                <img src="images/user.png" alt="Cart Icon">
+                <img src="images/cart2.png" alt="Cart Icon">
+            </a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Pesquisar Amazon.com.br">
+            <button>
+                <img src="../img.icons8.com/material-rounded/24/search.png" alt="Search Icon">
+            </button>
+        </div>
+    </div>
+    <div class="location-bar" >
+        <img src="images/local.png" alt="Location Icon">
+        <div>A entrega será feita em: Prazo estimado — <span>5 a 7 Dias</span></div>
+    </div>
+    </body>
+    
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            padding: 2px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .product-image {
+            width: 150px;
+            height: auto;
+        }
+
+        .product-details {
+            text-align: left;
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 0 0px;
+        }
+
+        .options {
+            font-size: 8px;
+            color: #0073e6;
+            text-decoration: none;
+            margin-bottom: 1px;
+            display: inline-block;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            margin-bottom: 1px;
+        }
+
+        .stars {
+            color: #ff9800;
+            margin-right: 5px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin: 1px 0;
+        }
+
+        .old-price {
+            font-size: 14px;
+            text-decoration: line-through;
+            color: #777;
+        }
+
+        .info {
+            font-size: 11px;
+            color: #666;
+            margin: 1px 0;
+        }
+        
+        .info1 {
+            font-size: 11px;
+            color: red;
+            margin: 1px 0;
+        }
+
+        .prime {
+            color: #0073e6;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .delivery {
+            font-size: 9px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart {
+            background-color: #FFD700;
+            color: #333;
+            font-size: 9px;
+            font-weight: bold;
+            border: none;
+            border-radius: 17px;
+            padding: 10px 42px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        
+        .esgotado {
+            background-color: #DB0F27;
+            color: #fff;
+            font-size: 9px;
+            font-weight: bold;
+            border: none;
+            border-radius: 17px;
+            padding: 10px 32px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .add-to-cart:hover {
+            background-color: #f7ca00;
+        }
+       
+      
+    </style>
+</head>
+<body>
+     <img style="width:100%" src="images/banner2.gif">
+   
+   
+   <section class="section">
+        <div class="card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_978597-MLB83063464139_032025-F.webp" alt="iPhone 13" class="product-image">
+            <div class="product-details">
+                <h1 class="product-title">Kit Estojo De Colorir 168 Cores Caneta Ponta Dupla Marcador + 2 Livros De Colorir 50 Paginas Anti Estressante Adulto Infantil</h1>
+                <a href="#" class="options">Opções: 1 tamanho</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(1.994)</span>
+                </div>
+                <div class="info">Mais de 2.2 mil compras no mês passado</div>
+                <div style="background-color: #cc0000; color: white; font-size: 12px; font-weight: bold; text-align: left; padding: 3px; display: inline-block; border-radius:2px">Semana do Consumidor</div>
+                <div class="price">R$ 87,90</div>
+                <div class="old-price">R$ 179,90</div>
+                <div class="info1"> Últimas 6 unidades disponíveis</div>
+                <div class="delivery">Receba em até <strong>5 dias</strong><br>Opção de frete <b>GRÁTIS</b> disponível</div>
+                <button class="add-to-cart" onclick="window.location.href='7.html'">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+   
+    <section class="section">
+        <div class="card">
+            <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/810051702e6ea56ba5fc83fe01a3d844.jpg" alt="iPhone 13" class="product-image">
+            <div class="product-details">
+                <h1 class="product-title">Kit 80 Caneta Marcadora De Ponta Dupla + Livro Bobbie Goods para Colorir 50 folha de 180g</h1>
+                <a href="#" class="options">Opções: 1 tamanho</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(1.994)</span>
+                </div>
+                <div class="info">Mais de 2.2 mil compras no mês passado</div>
+                <div style="background-color: #cc0000; color: white; font-size: 12px; font-weight: bold; text-align: left; padding: 3px; display: inline-block; border-radius:2px">Semana do Consumidor</div>
+                <div class="price">R$ 57,90</div>
+                <div class="old-price">R$ 129,90</div>
+                <div class="info1"> Últimas 6 unidades disponíveis</div>
+                <div class="delivery">Receba em até <strong>5 dias</strong><br>Opção de frete <b>GRÁTIS</b> disponível</div>
+                <button class="add-to-cart" onclick="window.location.href='1.html'">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rd5a-m7kxo60pjjld58" alt="iPhone 13" class="product-image">
+            <div class="product-details">
+                <h1 class="product-title">2 Livro De Colorir Bobbie Goods 50 Desenhos + kit De 120 Canetinhas Ponta Dupla - Capa Dura</h1>
+                <a href="#" class="options">Opções: 1 tamanho</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(1.994)</span>
+                </div>
+                <div class="info">Mais de 1.3 mil compras no mês passado</div>
+                <div style="background-color: #cc0000; color: white; font-size: 12px; font-weight: bold; text-align: left; padding: 3px; display: inline-block; border-radius:2px">Semana do Consumidor</div>
+                <div class="price">R$ 67,90</div>
+                <div class="old-price">R$ 159,90,90</div>
+                <div class="info1"> Últimas 5 unidades disponíveis</div>
+                <div class="delivery">Receba em até <strong>5 dias</strong><br>Opção de frete <b>GRÁTIS</b> disponível</div>
+                <button class="add-to-cart" onclick="window.location.href='2.html'">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rd6u-m7jgh3rk6ltde2@resize_w450_nl" alt="iPhone 13" class="product-image">
+            <div class="product-details">
+                <h1 class="product-title">Livro De Colorir Bobbie Goods + kit De 60 Canetinhas Ponta Dupla - 50 Paginas Capa Dura</h1>
+                <a href="#" class="options">Opções: 1 tamanho</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(1.994)</span>
+                </div>
+                <div class="info">Mais de 1.9 mil compras no mês passado</div>
+                <div style="background-color: #cc0000; color: white; font-size: 12px; font-weight: bold; text-align: left; padding: 3px; display: inline-block; border-radius:2px">Semana do Consumidor</div>
+                <div class="price">R$ 47,90</div>
+                <div class="old-price">R$ 109,90</div>
+                <div class="info1"> Últimas 7 unidades disponíveis</div>
+                <div class="delivery">Receba em até <strong>5 dias</strong><br>Opção de frete <b>GRÁTIS</b> disponível</div>
+                <button class="add-to-cart" onclick="window.location.href='3.html'">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m6fz6ipnyzpjd6@resize_w450_nl" alt="iPhone 13" class="product-image">
+            <div class="product-details">
+                <h1 class="product-title">Livro De Colorir Bobbie Goods + kit De 24 Canetinhas Ponta Dupla - 55 Paginas Capa Dura</h1>
+                <a href="#" class="options">Opções: 1 tamanho</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(1.994)</span>
+                </div>
+                <div class="info">Mais de 2.3 mil compras no mês passado</div>
+                <div style="background-color: #cc0000; color: white; font-size: 12px; font-weight: bold; text-align: left; padding: 3px; display: inline-block; border-radius:2px">Semana do Consumidor</div>
+                <div class="price">R$ 27,90</div>
+                <div class="old-price">R$ 79,90</div>
+                <div class="info1"> Últimas 7 unidades disponíveis</div>
+                <div class="delivery">Receba em até <strong>5 dias</strong><br>Opção de frete <b>GRÁTIS</b> disponível</div>
+                <button class="add-to-cart" onclick="window.location.href='4.html'">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="card">
+            <img src="https://down-br.img.susercontent.com/file/sg-11134201-7rcbx-m6hu2xmolgr0ba" alt="iPhone 13" class="product-image">
+            <div class="product-details">
+                <h1 class="product-title">Livro de Colorir Bobbie Goods 50 Folhas 180gr Caderno de Desenho Bob Bobi God + kit 36 Canetinhas Coloridas </h1>
+                <a href="#" class="options">Opções: 1 tamanho</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(1.994)</span>
+                </div>
+                <div class="info">Mais de 2.7 mil compras no mês passado</div>
+                <div style="background-color: #cc0000; color: white; font-size: 12px; font-weight: bold; text-align: left; padding: 3px; display: inline-block; border-radius:2px">Semana do Consumidor</div>
+                <div class="price">R$ 37,90</div>
+                <div class="old-price">R$ 99,90</div>
+                <div class="info1"> Últimas 3 unidades disponíveis</div>
+                <div class="delivery">Receba em até <strong>5 dias</strong><br>Opção de frete <b>GRÁTIS</b> disponível</div>
+                <button class="add-to-cart" onclick="window.location.href='5.html'">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_752347-MLB81033160503_112024-F-conjunto-canetas-marcador-permanente-ponta-dupla-262-cores.webp" alt="iPhone 13" class="product-image">
+            <div class="product-details">
+                <h1 class="product-title">Conjunto Canetas Marcador Permanente Ponta Dupla 262 Cores</h1>
+                <a href="#" class="options">Opções: 1 tamanho</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(1.994)</span>
+                </div>
+                <div class="info">Mais de 2.1 mil compras no mês passado</div>
+                <div style="background-color: #cc0000; color: white; font-size: 12px; font-weight: bold; text-align: left; padding: 3px; display: inline-block; border-radius:2px">Semana do Consumidor</div>
+                <div class="price">R$ 97,90</div>
+                <div class="old-price">R$ 239,90</div>
+                <div class="info1"> Últimas 3 unidades disponíveis</div>
+                <div class="delivery">Receba em até <strong>5 dias</strong><br>Opção de frete <b>GRÁTIS</b> disponível</div>
+                <button class="add-to-cart" onclick="window.location.href='8.html'">Finalizar Compra</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="card">
+            <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m6u0dkgupv1j41" alt="iPhone 13" class="product-image">
+            <div class="product-details">
+                <h1 class="product-title">Livro de Colorir Bobbie Goods 100 Folhas Caderno de Desenho Pintura Coloring Book</h1>
+                <a href="#" class="options">Opções: 1 tamanho</a>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span>(1.994)</span>
+                </div>
+                <div class="info">Mais de 2.1 mil compras no mês passado</div>
+                <div style="background-color: #cc0000; color: white; font-size: 12px; font-weight: bold; text-align: left; padding: 3px; display: inline-block; border-radius:2px">Semana do Consumidor</div>
+                <div class="price">R$ 17,90</div>
+                <div class="old-price">R$ 49,90</div>
+                <div class="info1"> Últimas 3 unidades disponíveis</div>
+                <div class="delivery">Receba em até <strong>5 dias</strong><br>Opção de frete <b>GRÁTIS</b> disponível</div>
+                <button class="esgotado" onclick="">ESGOTADO</button>
+            </div>
+        </div>
+    </section>
+    
+  
+        
+        
+</body>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .footer {
+            background-color: #232F3E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <img style="width: 20%" src="images/logoamazon1.png"><br><br>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Ajuda</a>
+        <p>&copy; 2025 Amazon. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+<!-- Mirrored from livro-bob.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Jul 2025 14:56:42 GMT -->
+</html>
