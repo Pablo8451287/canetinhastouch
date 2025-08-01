@@ -1,0 +1,209 @@
+/* Importação do Tailwind via CDN */
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+
+/* Variáveis de cores personalizadas - Tema Roxo (Paralisação Motoboy) */
+:root {
+  --primary-color: #6C009E; /* Roxo principal */
+  --primary-light: #8A2BE2; /* Roxo mais claro para hover */
+  --primary-dark: #4B0082; /* Roxo mais escuro para elementos ativos */
+  --background-color: #F8F5FF; /* Fundo leve com tom roxo */
+  --text-color: #333333; /* Cor de texto padrão */
+  --border-color: #D8C8E8; /* Bordas com tom roxo suave */
+  --success-color: #4CAF50; /* Verde para mensagens de sucesso */
+  --accent-color: #9D4EDD; /* Cor de destaque secundária */
+}
+
+/* Estilos gerais */
+body {
+  background-color: var(--background-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo do card/modal - Versão Paralisação Motoboy */
+.taxa-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 35px rgba(108, 0, 158, 0.15);
+  padding: 35px;
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  border-top: 4px solid var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.taxa-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, transparent, transparent 50%, rgba(108, 0, 158, 0.05) 50%, rgba(108, 0, 158, 0.05));
+}
+
+/* Estilo do cabeçalho - Versão Paralisação Motoboy */
+.taxa-header {
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.8rem;
+}
+
+.taxa-header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  border-radius: 2px;
+}
+
+.taxa-header h1 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.05);
+}
+
+/* Estilo do ícone de alerta - Versão Paralisação Motoboy */
+.alert-icon {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+  filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1));
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+/* Estilo para mensagens principais - Versão Paralisação Motoboy */
+.taxa-message {
+  margin-bottom: 1.8rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  padding: 0 5px;
+}
+
+/* Destaque para valores - Versão Paralisação Motoboy */
+.taxa-valor {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  display: inline-block;
+  position: relative;
+  padding: 0 8px;
+  background: linear-gradient(120deg, transparent, rgba(108, 0, 158, 0.05), transparent);
+  border-radius: 4px;
+}
+
+/* Estilo para texto secundário - Versão Paralisação Motoboy */
+.taxa-secondary-text {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 1.2rem 0;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+}
+
+.taxa-secondary-text:before,
+.taxa-secondary-text:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 30px;
+  background-color: rgba(108, 0, 158, 0.2);
+  top: 50%;
+}
+
+.taxa-secondary-text:before {
+  left: -40px;
+}
+
+.taxa-secondary-text:after {
+  right: -40px;
+}
+
+/* Estilo para botões - Versão Paralisação Motoboy */
+.taxa-button {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(108, 0, 158, 0.2);
+}
+
+.taxa-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s ease;
+}
+
+.taxa-button:hover {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(108, 0, 158, 0.3);
+}
+
+.taxa-button:hover:before {
+  left: 100%;
+}
+
+.taxa-button:active {
+  transform: translateY(0);
+}
+
+/* Estilo para texto de instruções */
+.taxa-instructions {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 1rem;
+}
+
+/* Ícone de cadeado para segurança */
+.lock-icon {
+  margin-right: 0.5rem;
+}
