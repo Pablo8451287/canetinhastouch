@@ -696,17 +696,26 @@
       });
     </script>
   </body>
-  <div class="product-section">
-    <button class="buy-now" onclick="window.location.href='https://pay.kitcanetastouch.com/4KovG1Q4xAqGyDE'">Comprar
-      agora</button>
-    <button class="add-to-cart" onclick="window.location.href='https://pay.kitcanetastouch.com/4KovG1Q4xAqGyDE'">Adicionar
-      ao carrinho</button>
+ <div class="product-section">
+  <button class="buy-now" onclick="redirectWithUTM('https://pay.kitcanetastouch.com/4KovG1Q4xAqGyDE')">Comprar agora</button>
+  <button class="add-to-cart" onclick="redirectWithUTM('https://pay.kitcanetastouch.com/4KovG1Q4xAqGyDE')">Adicionar ao carrinho</button>
 
-    <div class="seller-info">
-      <p>Enviado por <span class="seller-name">Amazon.</span></p>
-      <p>Vendido por <a href="#" class="seller-link">Amazon</a></p>
-      <p>Devolução <a href="#" class="return-policy">Devolução ou Reembolso em até 7 dias após o recebimento</a></p>
-    </div>
+  <div class="seller-info">
+    <p>Enviado por <span class="seller-name">Amazon.</span></p>
+    <p>Vendido por <a href="#" class="seller-link">Amazon</a></p>
+    <p>Devolução <a href="#" class="return-policy">Devolução ou Reembolso em até 7 dias após o recebimento</a></p>
+  </div>
+
+<script>
+  if (window.location.search) {
+    localStorage.setItem('utms', window.location.search);
+  }
+
+  function redirectWithUTM(url) {
+    const utms = localStorage.getItem('utms') || '';
+    window.location.href = url + utms;
+  }
+</script>
 
     <div class="insurance-section">
       <p class="section-title">Adicionar plano de seguro ou garantia</p>
@@ -1415,3 +1424,4 @@
 </body>
 
 </html>
+
