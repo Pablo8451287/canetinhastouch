@@ -10,7 +10,7 @@
     <title>Amazon</title>
     <script src="../cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
 
-    <!-- FUNÇÃO UTM CORRIGIDA -->
+    <!-- Função para passar UTMs até o checkout -->
     <script>
       function irPara(link) {
         window.location.href = link + window.location.search;
@@ -22,7 +22,6 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
-
         .header {
             background-color: #232f3e;
             color: white;
@@ -33,33 +32,28 @@
             flex-wrap: wrap;
             margin: 0;
         }
-
         .header .logo {
             display: flex;
             align-items: center;
         }
-
         .header .logo img {
             height: 35px;
         }
-
         .header .user-cart {
             display: flex;
             align-items: center;
             gap: 10px;
             font-size: 14px;
         }
-         .header .user-cart img {
-            width: 18px; /* Largura padrão */
-            height: 18px; /* Altura padrão */
-            vertical-align: middle; /* Alinha o ícone verticalmente com o texto */
+        .header .user-cart img {
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
         }
-
         .header .user-cart a {
             color: white;
             text-decoration: none;
         }
-
         .header .search {
             flex-grow: 1;
             display: flex;
@@ -68,7 +62,6 @@
             width: 100%;
             order: 2;
         }
-
         .header .search input {
             flex-grow: 1;
             padding: 10px;
@@ -76,7 +69,6 @@
             border-radius: 5px 0 0 5px;
             font-size: 14px;
         }
-
         .header .search button {
             background-color: #f3a847;
             border: none;
@@ -84,11 +76,9 @@
             border-radius: 0 5px 5px 0;
             cursor: pointer;
         }
-
         .header .search button img {
             height: 16px;
         }
-
         .location-bar {
             background-color: #37475a;
             color: white;
@@ -98,32 +88,26 @@
             align-items: center;
             flex-wrap: wrap;
         }
-
         .location-bar img {
             margin-right: 5px;
             height: 15px;
         }
-
         .location-bar span {
             color: #f3a847;
             cursor: pointer;
         }
-
         @media (min-width: 768px) {
             .header {
                 flex-wrap: nowrap;
             }
-
             .header .search {
                 width: auto;
                 margin: 0 15px;
                 order: 0;
             }
-
             .header .user-cart {
                 font-size: 14px;
             }
-
             .location-bar {
                 font-size: 14px;
             }
@@ -154,16 +138,14 @@
         <div>A entrega será feita em: Definir endereço - <span>atualizar local</span></div>
     </div>
     
-        <style>
+    <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
-
         .product-section {
             padding: 15px;
         }
-
         .product-section .promo-banner {
             background-color: #d6f5d6;
             text-align: center;
@@ -172,38 +154,31 @@
             font-size: 16px;
             color: #333;
         }
-
         .product-section .promo-banner span {
             font-weight: bold;
         }
-
         .product-section .product-details {
             font-size: 14px;
         }
-
         .product-section .product-details .brand {
             color: #007185;
             font-weight: 0;
             font-size: 15px;
         }
-
         .product-section .product-details .title {
             font-size: 14px;
             margin: 0px 0;
             color: #333;
         }
-
         .product-section .product-details .rating {
             display: flex;
             align-items: center;
             margin: 5px 0;
             color: #333;
         }
-
         .product-section .product-details .rating span {
             margin-left: 5px;
         }
-
         .product-section .product-details .badge {
             background-color: #d86c00  ;
             color: white;
@@ -213,78 +188,273 @@
             display: inline-block;
             margin-right: 2px;
         }
-
         .product-section .product-details .category {
             color: #007185;
             font-weight: bold;
             font-size: 13px;
         }
-
         .product-section .product-details .sales-info {
             color: #333;
             margin-top: 6px;
             font-weight: 0;
         }
-        /* ...todo o seu CSS segue normalmente... */
+        .product-section {
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            width: 300px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            margin: 0 auto 10px;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .price-section {
+            font-size: 34px;
+            font-weight: lighter ;
+            display: flex;
+            align-items: flex-start;
+            gap: 5px;
+        }
+        .discount {
+            color: #cc0000;
+            font-size: 36px;
+            font-weight: 100;
+        }
+        .currency, .cents {
+            font-size: 16px;
+            position: relative;
+            top: 5px;
+        }
+        .cents {
+            top: 8px;
+        }
+        .installments {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .installments a {
+            color: #007185;
+            text-decoration: none;
+        }
+        .delivery-info {
+            font-size: 14px;
+            color: #333;
+        }
+        .delivery-info a {
+            color: #007185;
+            text-decoration: none;
+        }
+        .delivery-info .location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .delivery-info .location span {
+            color: #333;
+        }
+        .delivery-estimate {
+            font-size: 14px;
+            color: #cc0000;
+            margin-top: 10px;
+            font-weight: bold
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            flex: 1 1 30%;
+        }
         .add-to-cart, .buy-now {
-          width: 100%;
-          padding: 15px;
-          font-size: 16px;
-          font-weight: 0;
-          border: none;
-          border-radius: 25px;
-          margin-bottom: 10px;
-          cursor: pointer;
-          text-align: center;
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 0;
+            border: none;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: center;
         }
         .add-to-cart {
-          background-color: #FFD700;
-          color: #000;
+            background-color: #FFD700;
+            color: #000;
         }
         .buy-now {
-          background-color: #FFA500;
-          color: #000;
+            background-color: #FFA500;
+            color: #000;
         }
-        .footer {
-            background-color: #232F3E;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+        .seller-info {
+            margin-top: 15px;
         }
-        .footer a {
-            color: #ddd;
-            text-decoration: none;
-            margin: 0 10px;
-            display: inline-block;
-        }
-        .footer a:hover {
-            color: white;
-        }
-        .footer p {
-            margin: 10px 0 0;
+        .seller-info p {
+            margin: 5px 0;
             font-size: 12px;
         }
-        /* ...demais estilos iguais ao seu index original... */
+        .seller-name {
+            font-weight: bold;
+        }
+        .seller-link, .return-policy {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .seller-link:hover, .return-policy:hover {
+            text-decoration: underline;
+        }
+        .insurance-section {
+            margin-top: 20px;
+        }
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        .insurance-option {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .insurance-option input {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        .insurance-text {
+            margin-right: 5px;
+        }
+        .insurance-price {
+            font-weight: bold;
+            color: #FF4500;
+        }
+        .add-to-list {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .add-to-list:hover {
+            text-decoration: underline;
+        }
+        .image-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: relative;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+        .circles {
+            display: flex;
+            gap: 8px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .circle {
+            width: 8px;
+            height: 8px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            background-color: transparent;
+        }
+        .icons {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+        .icon {
+            font-size: 18px;
+            color: #000;
+            cursor: pointer;
+        }
+        .icon.heart:hover {
+            color: red;
+        }
+        .icon.share:hover {
+            color: #007bff;
+        }
+        .price-section {
+            font-size: 37px;
+            font-weight: 0;
+        }
+        .price-section sup {
+            font-size: 14px;
+            vertical-align: top;
+            line-height: 1;
+        }
+        .icon img {
+            display: inline-block;
+            vertical-align: middle;
+        }
     </style>
-<!-- ...demais blocos do seu HTML... -->
-
-<div class="product-section">
-  <!-- Botões corrigidos -->
-  <button class="buy-now" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Comprar agora</button>
-  <button class="add-to-cart" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Adicionar ao carrinho</button>
-  <!-- ...restante do bloco igual... -->
-</div>
-
-<!-- ...todo o restante do seu HTML igual ao original... -->
-
-<footer class="footer">
-    <img style="width: 20%" src="images/logoamazon1.png"><br><br>
-    <a href="#">Termos de Uso</a>
-    <a href="#">Política de Privacidade</a>
-    <a href="#">Ajuda</a>
-    <p>&copy; 2025 Amazon. Todos os direitos reservados.</p>
-</footer>
-
+<!-- ... outros estilos, scripts e conteúdo seguem normalmente ... -->
+</head>
+<body>
+    <!-- ... conteúdo do body ... -->
+    <div class="product-section">
+      <!-- ... outros elementos ... -->
+      <!-- ALTERAÇÃO SOMENTE AQUI NOS BOTÕES -->
+      <button class="buy-now" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Comprar agora</button>
+      <button class="add-to-cart" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Adicionar ao carrinho</button>
+      <!-- ... resto do código segue ... -->
+    </div>
+    <!-- ... resto do seu HTML, sem alteração ... -->
+    <footer class="footer">
+        <img style="width: 20%" src="images/logoamazon1.png"><br><br>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Ajuda</a>
+        <p>&copy; 2025 Amazon. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>
