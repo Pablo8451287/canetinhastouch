@@ -1,70 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
+<!-- Mirrored from canetastouch.vercel.app/livro-bob.vercel.app/1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 31 Jul 2025 14:44:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon</title>
     <script src="../cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
 
-    <!-- FUNÇÃO PARA PRESERVAR OS PARÂMETROS UTM -->
+    <!-- FUNÇÃO UTM CORRIGIDA -->
     <script>
       function irPara(link) {
         window.location.href = link + window.location.search;
       }
     </script>
-    <!-- ...demais estilos e scripts mantidos... -->
+
     <style>
-        /* (Seus estilos continuam aqui, não foram alterados) */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        /* ...restante do CSS omitido por brevidade... */
-        .add-to-cart, .buy-now {
-          width: 100%;
-          padding: 15px;
-          font-size: 16px;
-          font-weight: 0;
-          border: none;
-          border-radius: 25px;
-          margin-bottom: 10px;
-          cursor: pointer;
-          text-align: center;
-        }
-        .add-to-cart {
-          background-color: #FFD700;
-          color: #000;
-        }
-        .buy-now {
-          background-color: #FFA500;
-          color: #000;
-        }
-        /* ...restante dos estilos... */
-        .footer {
-            background-color: #232F3E;
+
+        .header {
+            background-color: #232f3e;
             color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            flex-wrap: wrap;
+            margin: 0;
         }
-        .footer a {
-            color: #ddd;
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo img {
+            height: 35px;
+        }
+
+        .header .user-cart {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+         .header .user-cart img {
+            width: 18px; /* Largura padrão */
+            height: 18px; /* Altura padrão */
+            vertical-align: middle; /* Alinha o ícone verticalmente com o texto */
+        }
+
+        .header .user-cart a {
+            color: white;
             text-decoration: none;
-            margin: 0 10px;
-            display: inline-block;
         }
-        .footer a:hover {
+
+        .header .search {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            width: 100%;
+            order: 2;
+        }
+
+        .header .search input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 14px;
+        }
+
+        .header .search button {
+            background-color: #f3a847;
+            border: none;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .header .search button img {
+            height: 16px;
+        }
+
+        .location-bar {
+            background-color: #37475a;
             color: white;
+            padding: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        .footer p {
-            margin: 10px 0 0;
-            font-size: 12px;
+
+        .location-bar img {
+            margin-right: 5px;
+            height: 15px;
+        }
+
+        .location-bar span {
+            color: #f3a847;
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .header {
+                flex-wrap: nowrap;
+            }
+
+            .header .search {
+                width: auto;
+                margin: 0 15px;
+                order: 0;
+            }
+
+            .header .user-cart {
+                font-size: 14px;
+            }
+
+            .location-bar {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <div class="header" style="margin: 0;">
+    <div class="header"style="margin: 0;">
         <div class="logo">
             <img src="images/logoamazon1.png" alt="Amazon Logo">.com.br
         </div>
@@ -86,25 +153,138 @@
         <img src="images/local.png" alt="Location Icon">
         <div>A entrega será feita em: Definir endereço - <span>atualizar local</span></div>
     </div>
+    
+        <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-    <!-- ... (demais HTML do produto mantido igual) ... -->
+        .product-section {
+            padding: 15px;
+        }
 
-    <div class="product-section">
-        <!-- ... (demais elementos do produto) ... -->
-        <!-- BOTÕES CORRIGIDOS -->
-        <button class="buy-now" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Comprar agora</button>
-        <button class="add-to-cart" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Adicionar ao carrinho</button>
-        <!-- ... (demais elementos do produto) ... -->
-    </div>
+        .product-section .promo-banner {
+            background-color: #d6f5d6;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #333;
+        }
 
-    <!-- ...restante do seu conteúdo... -->
+        .product-section .promo-banner span {
+            font-weight: bold;
+        }
 
-    <footer class="footer">
-        <img style="width: 20%" src="images/logoamazon1.png"><br><br>
-        <a href="#">Termos de Uso</a>
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Ajuda</a>
-        <p>&copy; 2025 Amazon. Todos os direitos reservados.</p>
-    </footer>
+        .product-section .product-details {
+            font-size: 14px;
+        }
+
+        .product-section .product-details .brand {
+            color: #007185;
+            font-weight: 0;
+            font-size: 15px;
+        }
+
+        .product-section .product-details .title {
+            font-size: 14px;
+            margin: 0px 0;
+            color: #333;
+        }
+
+        .product-section .product-details .rating {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .product-section .product-details .rating span {
+            margin-left: 5px;
+        }
+
+        .product-section .product-details .badge {
+            background-color: #d86c00  ;
+            color: white;
+            font-weight: 0;
+            padding: 2px 7px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 2px;
+        }
+
+        .product-section .product-details .category {
+            color: #007185;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .product-section .product-details .sales-info {
+            color: #333;
+            margin-top: 6px;
+            font-weight: 0;
+        }
+        /* ...todo o seu CSS segue normalmente... */
+        .add-to-cart, .buy-now {
+          width: 100%;
+          padding: 15px;
+          font-size: 16px;
+          font-weight: 0;
+          border: none;
+          border-radius: 25px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          text-align: center;
+        }
+        .add-to-cart {
+          background-color: #FFD700;
+          color: #000;
+        }
+        .buy-now {
+          background-color: #FFA500;
+          color: #000;
+        }
+        .footer {
+            background-color: #232F3E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 12px;
+        }
+        /* ...demais estilos iguais ao seu index original... */
+    </style>
+<!-- ...demais blocos do seu HTML... -->
+
+<div class="product-section">
+  <!-- Botões corrigidos -->
+  <button class="buy-now" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Comprar agora</button>
+  <button class="add-to-cart" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Adicionar ao carrinho</button>
+  <!-- ...restante do bloco igual... -->
+</div>
+
+<!-- ...todo o restante do seu HTML igual ao original... -->
+
+<footer class="footer">
+    <img style="width: 20%" src="images/logoamazon1.png"><br><br>
+    <a href="#">Termos de Uso</a>
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Ajuda</a>
+    <p>&copy; 2025 Amazon. Todos os direitos reservados.</p>
+</footer>
+
 </body>
 </html>
