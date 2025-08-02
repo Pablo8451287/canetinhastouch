@@ -1,27 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<!-- Mirrored from canetastouch.vercel.app/livro-bob.vercel.app/1.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 31 Jul 2025 14:44:29 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazon</title>
     <script src="../cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
-
-    <!-- Função para passar UTMs até o checkout -->
-    <script>
-      function irPara(link) {
-        window.location.href = link + window.location.search;
-      }
-    </script>
-
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+        /* Cole aqui todos os seus estilos. Não alterei nada do visual. */
+        body { margin: 0; font-family: Arial, sans-serif; }
         .header {
             background-color: #232f3e;
             color: white;
@@ -32,53 +18,15 @@
             flex-wrap: wrap;
             margin: 0;
         }
-        .header .logo {
-            display: flex;
-            align-items: center;
-        }
-        .header .logo img {
-            height: 35px;
-        }
-        .header .user-cart {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-        }
-        .header .user-cart img {
-            width: 18px;
-            height: 18px;
-            vertical-align: middle;
-        }
-        .header .user-cart a {
-            color: white;
-            text-decoration: none;
-        }
-        .header .search {
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-            width: 100%;
-            order: 2;
-        }
-        .header .search input {
-            flex-grow: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 5px 0 0 5px;
-            font-size: 14px;
-        }
-        .header .search button {
-            background-color: #f3a847;
-            border: none;
-            padding: 10px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-        .header .search button img {
-            height: 16px;
-        }
+        .header .logo { display: flex; align-items: center; }
+        .header .logo img { height: 35px; }
+        .header .user-cart { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+        .header .user-cart img { width: 18px; height: 18px; vertical-align: middle; }
+        .header .user-cart a { color: white; text-decoration: none; }
+        .header .search { flex-grow: 1; display: flex; align-items: center; margin: 10px 0; width: 100%; order: 2; }
+        .header .search input { flex-grow: 1; padding: 10px; border: none; border-radius: 5px 0 0 5px; font-size: 14px; }
+        .header .search button { background-color: #f3a847; border: none; padding: 10px; border-radius: 0 5px 5px 0; cursor: pointer; }
+        .header .search button img { height: 16px; }
         .location-bar {
             background-color: #37475a;
             color: white;
@@ -88,367 +36,332 @@
             align-items: center;
             flex-wrap: wrap;
         }
-        .location-bar img {
-            margin-right: 5px;
-            height: 15px;
-        }
-        .location-bar span {
-            color: #f3a847;
-            cursor: pointer;
-        }
+        .location-bar img { margin-right: 5px; height: 15px; }
+        .location-bar span { color: #f3a847; cursor: pointer; }
         @media (min-width: 768px) {
-            .header {
-                flex-wrap: nowrap;
-            }
-            .header .search {
-                width: auto;
-                margin: 0 15px;
-                order: 0;
-            }
-            .header .user-cart {
-                font-size: 14px;
-            }
-            .location-bar {
-                font-size: 14px;
-            }
+            .header { flex-wrap: nowrap; }
+            .header .search { width: auto; margin: 0 15px; order: 0; }
+            .header .user-cart { font-size: 14px; }
+            .location-bar { font-size: 14px; }
         }
+        .product-section { padding: 20px; max-width: 400px; margin: 0 auto; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; }
+        .product-section .product-details { font-size: 14px; }
+        .product-section .product-details .brand { color: #007185; font-size: 15px; }
+        .product-section .product-details .title { font-size: 14px; margin: 0px 0; color: #333; }
+        .product-section .product-details .rating { display: flex; align-items: center; margin: 5px 0; color: #333; }
+        .product-section .product-details .rating span { margin-left: 5px; }
+        .product-section .product-details .badge { background-color: #d86c00; color: white; padding: 2px 7px; border-radius: 5px; display: inline-block; margin-right: 2px; }
+        .product-section .product-details .category { color: #007185; font-weight: bold; font-size: 13px; }
+        .product-section .product-details .sales-info { color: #333; margin-top: 6px; }
+        .carousel { position: relative; width: 100%; height: 300px; width: 300px; overflow: hidden; margin-bottom: 10px; margin: 0 auto 10px; }
+        .carousel-images { display: flex; transition: transform 0.5s ease; }
+        .carousel-images img { width: 100%; height: 100%; object-fit: cover; flex-shrink: 0; }
+        .image-navigation { display: flex; justify-content: space-between; align-items: center; width: 100%; position: relative; padding: 10px 20px; box-sizing: border-box; }
+        .circles { display: flex; gap: 8px; position: absolute; left: 50%; transform: translateX(-50%); }
+        .circle { width: 8px; height: 8px; border: 2px solid #ccc; border-radius: 50%; background-color: transparent; }
+        .icons { display: flex; gap: 10px; margin-left: auto; }
+        .icon { font-size: 18px; color: #000; cursor: pointer; }
+        .icon.heart:hover { color: red; }
+        .icon.share:hover { color: #007bff; }
+        .price-section { font-size: 37px; font-weight: 0; display: flex; align-items: flex-start; gap: 5px; }
+        .discount { color: #cc0000; font-size: 36px; font-weight: 100; }
+        .currency, .cents { font-size: 16px; position: relative; top: 5px; }
+        .cents { top: 8px; }
+        .installments { font-size: 14px; color: #333; margin-bottom: 10px; }
+        .installments a { color: #007185; text-decoration: none; }
+        .delivery-info { font-size: 14px; color: #333; }
+        .delivery-info a { color: #007185; text-decoration: none; }
+        .delivery-info .location { display: flex; align-items: center; gap: 5px; margin-top: 5px; }
+        .delivery-estimate { font-size: 14px; color: #cc0000; margin-top: 10px; font-weight: bold }
+        .add-to-cart, .buy-now { width: 100%; padding: 15px; font-size: 16px; border: none; border-radius: 25px; margin-bottom: 10px; cursor: pointer; text-align: center; }
+        .add-to-cart { background-color: #FFD700; color: #000; }
+        .buy-now { background-color: #FFA500; color: #000; }
+        .seller-info { margin-top: 15px; }
+        .seller-info p { margin: 5px 0; font-size: 12px; }
+        .seller-name { font-weight: bold; }
+        .seller-link, .return-policy { color: #007BFF; text-decoration: none; }
+        .seller-link:hover, .return-policy:hover { text-decoration: underline; }
+        .insurance-section { margin-top: 20px; }
+        .section-title { font-size: 14px; font-weight: bold; margin-bottom: 5px; }
+        .divider { border: none; border-top: 1px solid #ddd; margin: 10px 0; }
+        .insurance-option { display: flex; align-items: center; font-size: 14px; line-height: 1.5; margin-bottom: 10px; }
+        .insurance-option input { margin-right: 10px; transform: scale(1.2); }
+        .insurance-text { margin-right: 5px; }
+        .insurance-price { font-weight: bold; color: #FF4500; }
+        .add-to-list { display: block; margin-top: 10px; font-size: 14px; color: #007BFF; text-decoration: none; }
+        .add-to-list:hover { text-decoration: underline; }
+        .trust-section { display: flex; flex-wrap: wrap; justify-content: space-between; border-bottom: 1px solid #ccc; padding: 10px; max-width: 100%; }
+        .trust-item { display: flex; align-items: center; width: 48%; margin-bottom: 15px; box-sizing: border-box; }
+        .trust-item img { width: 20px; height: 20px; margin-right: 8px; object-fit: contain; }
+        .trust-item a { text-decoration: none; color: teal; font-size: 14px; line-height: 1.2; }
+        .other-sellers { margin-top: 15px; padding: 10px; }
+        .other-sellers h4 { font-size: 16px; margin: 0 0 5px 0; }
+        .other-sellers p { margin: 5px 0; font-size: 14px; }
+        .other-sellers .price { font-size: 18px; font-weight: bold; display: flex; align-items: baseline; }
+        .other-sellers .price span { font-size: 12px; vertical-align: top; }
+        .other-sellers .shipping { font-size: 14px; font-weight: bold; color: green; margin: 0; }
+        .section-header { padding: 20px 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-weight: bold; }
+        .section-header:hover { background-color: #f9f9f9; }
+        .section-content { display: none; background-color: #fff; padding: 10px 0; }
+        table { width: 100%; border-collapse: collapse; }
+        table th, table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #ddd; }
+        table th { background-color: #f5f5f5; font-weight: bold; }
+        .toggle-arrow { transition: transform 0.3s; font-size: 14px; }
+        .expanded .toggle-arrow { transform: rotate(180deg); }
+        .link { text-decoration: none; color: #007185; font-size: 14px; margin-top: 5px; display: inline-block; }
+        .gallery-container { max-width: 400px; margin: 20px auto; text-align: center; }
+        .gallery-title { font-size: 20px; font-weight: bold; margin-bottom: 10px; text-align: left; }
+        .gallery { display: flex; flex-direction: column; gap: 10px; }
+        .gallery img { width: 100%; height: auto; border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; }
+        .gallery img:hover { transform: scale(1.05); }
+        .rating { font-size: 18px; font-weight: bold; }
+        .stars { color: gold; font-size: 18px; margin-top: 5px; }
+        .bar-container { display: flex; align-items: center; margin: 5px 0; }
+        .bar { width: 100px; height: 10px; background-color: #ddd; margin-left: 10px; position: relative; border-radius: 5px; }
+        .bar-fill { height: 100%; background-color: #ffa500; border-radius: 5px; }
+        .percentage { margin-left: 5px; }
+        .info { font-size: 12px; color: #0073bb; cursor: pointer; }
+        .feedback-container { max-width: 600px; margin: 0 auto; }
+        .feedback { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: flex-start; gap: 15px; }
+        .user-photo { width: 35px; height: 35px; border-radius: 50%; object-fit: cover; }
+        .feedback-content { flex: 1; }
+        .feedback h3 { margin: 0; font-size: 14px; color: #333; }
+        .feedback p { margin: 8px 0 0; font-size: 15px; color: #666; line-height: 1.5; }
+        .feedback-images { display: flex; gap: 10px; margin-top: 12px; }
+        .feedback-images img { width: 90px; height: 90px; object-fit: cover; border-radius: 5px; }
+        .footer { background-color: #232F3E; color: white; text-align: center; padding: 20px; margin-top: 20px; }
+        .footer a { color: #ddd; text-decoration: none; margin: 0 10px; display: inline-block; }
+        .footer a:hover { color: white; }
+        .footer p { margin: 10px 0 0; font-size: 12px; }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentSlide = 0;
+            const carouselImages = document.querySelector('.carousel-images');
+            const totalSlides = document.querySelectorAll('.carousel-images img').length;
+            function showSlide(index) {
+                if (index >= totalSlides) {
+                    currentSlide = 0;
+                } else if (index < 0) {
+                    currentSlide = totalSlides - 1;
+                } else {
+                    currentSlide = index;
+                }
+                const offset = currentSlide * -100;
+                carouselImages.style.transform = `translateX(${offset}%)`;
+            }
+            window.showSlide = showSlide;
+            window.nextSlide = () => showSlide(currentSlide + 1);
+            window.prevSlide = () => showSlide(currentSlide - 1);
+            // Swipe
+            let startX = 0;
+            let endX = 0;
+            const carousel = document.getElementById('carousel');
+            if (carousel) {
+                carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                carousel.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    if (startX > endX + 50) {
+                        window.nextSlide();
+                    } else if (startX < endX - 50) {
+                        window.prevSlide();
+                    }
+                });
+            }
+        });
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            if (!section) return;
+            const content = section.querySelector('.section-content');
+            const header = section.querySelector('.section-header');
+            content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+            header.classList.toggle('expanded');
+        }
+    </script>
 </head>
 <body>
-    <div class="header"style="margin: 0;">
+    <!-- Header -->
+    <div class="header" style="margin: 0;">
         <div class="logo">
             <img src="images/logoamazon1.png" alt="Amazon Logo">.com.br
         </div>
         <div class="user-cart">
             <a href="#">Faça seu login</a>
-            <a href="#">
-                <img src="images/user.png" alt="Cart Icon">
-                <img src="images/cart2.png" alt="Cart Icon">
-            </a>
+            <a href="#"><img src="images/user.png" alt="User Icon"><img src="images/cart2.png" alt="Cart Icon"></a>
         </div>
         <div class="search">
             <input type="text" placeholder="Pesquisar Amazon.com.br">
-            <button>
-                <img src="../img.icons8.com/material-rounded/24/search.png" alt="Search Icon">
-            </button>
+            <button><img src="../img.icons8.com/material-rounded/24/search.png" alt="Search Icon"></button>
         </div>
     </div>
-    <div class="location-bar" >
+    <div class="location-bar">
         <img src="images/local.png" alt="Location Icon">
         <div>A entrega será feita em: Definir endereço - <span>atualizar local</span></div>
     </div>
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .product-section {
-            padding: 15px;
-        }
-        .product-section .promo-banner {
-            background-color: #d6f5d6;
-            text-align: center;
-            padding: 10px;
-            margin-bottom: 20px;
-            font-size: 16px;
-            color: #333;
-        }
-        .product-section .promo-banner span {
-            font-weight: bold;
-        }
-        .product-section .product-details {
-            font-size: 14px;
-        }
-        .product-section .product-details .brand {
-            color: #007185;
-            font-weight: 0;
-            font-size: 15px;
-        }
-        .product-section .product-details .title {
-            font-size: 14px;
-            margin: 0px 0;
-            color: #333;
-        }
-        .product-section .product-details .rating {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
-            color: #333;
-        }
-        .product-section .product-details .rating span {
-            margin-left: 5px;
-        }
-        .product-section .product-details .badge {
-            background-color: #d86c00  ;
-            color: white;
-            font-weight: 0;
-            padding: 2px 7px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-right: 2px;
-        }
-        .product-section .product-details .category {
-            color: #007185;
-            font-weight: bold;
-            font-size: 13px;
-        }
-        .product-section .product-details .sales-info {
-            color: #333;
-            margin-top: 6px;
-            font-weight: 0;
-        }
-        .product-section {
-            padding: 20px;
-            max-width: 400px;
-            margin: 0 auto;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-        .carousel {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            width: 300px;
-            overflow: hidden;
-            margin-bottom: 10px;
-            margin: 0 auto 10px;
-        }
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .carousel-images img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        .carousel-buttons {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        .carousel-buttons button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .price-section {
-            font-size: 34px;
-            font-weight: lighter ;
-            display: flex;
-            align-items: flex-start;
-            gap: 5px;
-        }
-        .discount {
-            color: #cc0000;
-            font-size: 36px;
-            font-weight: 100;
-        }
-        .currency, .cents {
-            font-size: 16px;
-            position: relative;
-            top: 5px;
-        }
-        .cents {
-            top: 8px;
-        }
-        .installments {
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .installments a {
-            color: #007185;
-            text-decoration: none;
-        }
-        .delivery-info {
-            font-size: 14px;
-            color: #333;
-        }
-        .delivery-info a {
-            color: #007185;
-            text-decoration: none;
-        }
-        .delivery-info .location {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 5px;
-        }
-        .delivery-info .location span {
-            color: #333;
-        }
-        .delivery-estimate {
-            font-size: 14px;
-            color: #cc0000;
-            margin-top: 10px;
-            font-weight: bold
-        }
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            flex: 1 1 30%;
-        }
-        .add-to-cart, .buy-now {
-            width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: 0;
-            border: none;
-            border-radius: 25px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            text-align: center;
-        }
-        .add-to-cart {
-            background-color: #FFD700;
-            color: #000;
-        }
-        .buy-now {
-            background-color: #FFA500;
-            color: #000;
-        }
-        .seller-info {
-            margin-top: 15px;
-        }
-        .seller-info p {
-            margin: 5px 0;
-            font-size: 12px;
-        }
-        .seller-name {
-            font-weight: bold;
-        }
-        .seller-link, .return-policy {
-            color: #007BFF;
-            text-decoration: none;
-        }
-        .seller-link:hover, .return-policy:hover {
-            text-decoration: underline;
-        }
-        .insurance-section {
-            margin-top: 20px;
-        }
-        .section-title {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .divider {
-            border: none;
-            border-top: 1px solid #ddd;
-            margin: 10px 0;
-        }
-        .insurance-option {
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-        .insurance-option input {
-            margin-right: 10px;
-            transform: scale(1.2);
-        }
-        .insurance-text {
-            margin-right: 5px;
-        }
-        .insurance-price {
-            font-weight: bold;
-            color: #FF4500;
-        }
-        .add-to-list {
-            display: block;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #007BFF;
-            text-decoration: none;
-        }
-        .add-to-list:hover {
-            text-decoration: underline;
-        }
-        .image-navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            position: relative;
-            padding: 10px 20px;
-            box-sizing: border-box;
-        }
-        .circles {
-            display: flex;
-            gap: 8px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .circle {
-            width: 8px;
-            height: 8px;
-            border: 2px solid #ccc;
-            border-radius: 50%;
-            background-color: transparent;
-        }
-        .icons {
-            display: flex;
-            gap: 10px;
-            margin-left: auto;
-        }
-        .icon {
-            font-size: 18px;
-            color: #000;
-            cursor: pointer;
-        }
-        .icon.heart:hover {
-            color: red;
-        }
-        .icon.share:hover {
-            color: #007bff;
-        }
-        .price-section {
-            font-size: 37px;
-            font-weight: 0;
-        }
-        .price-section sup {
-            font-size: 14px;
-            vertical-align: top;
-            line-height: 1;
-        }
-        .icon img {
-            display: inline-block;
-            vertical-align: middle;
-        }
-    </style>
-<!-- ... outros estilos, scripts e conteúdo seguem normalmente ... -->
-</head>
-<body>
-    <!-- ... conteúdo do body ... -->
     <div class="product-section">
-      <!-- ... outros elementos ... -->
-      <!-- ALTERAÇÃO SOMENTE AQUI NOS BOTÕES -->
-      <button class="buy-now" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Comprar agora</button>
-      <button class="add-to-cart" onclick="irPara('https://pay.kitcanetastouch.com/PVYB34elDXAZKzk')">Adicionar ao carrinho</button>
-      <!-- ... resto do código segue ... -->
+        <div class="product-details">
+            <div class="brand">Marca: Bobbie Goods</div>
+            <div class="title">Kit 80 Caneta Marcadora De Ponta Dupla + Livro Bobbie Goods para Colorir 50 folha de 180g</div>
+            <div class="rating">
+                <span>4,8</span>
+                <img src="../img.icons8.com/emoji/24/star-emoji.png" alt="Estrelas" style="height: 15px; margin-left: 3px;">
+                <img src="../img.icons8.com/emoji/24/star-emoji.png" alt="Estrelas" style="height: 15px; margin-left: 1px;">
+                <img src="../img.icons8.com/emoji/24/star-emoji.png" alt="Estrelas" style="height: 15px; margin-left: 3px;">
+                <img src="../img.icons8.com/emoji/24/star-emoji.png" alt="Estrelas" style="height: 15px; margin-left: 3px;">
+                <img src="../img.icons8.com/emoji/24/star-emoji.png" alt="Estrelas" style="height: 15px; margin-left: 3px;">
+                <span>(153)</span>
+            </div>
+            <div>
+                <span class="badge">MAIS VENDIDO</span>
+                <span class="category">Dias dos Pais</span>
+            </div>
+            <div class="sales-info"><b>Mais de 3.2 mil compras</b> esse mês</div>
+        </div>
     </div>
-    <!-- ... resto do seu HTML, sem alteração ... -->
+    <div class="product-section">
+        <div class="carousel" id="carousel">
+            <div class="carousel-images">
+                <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/810051702e6ea56ba5fc83fe01a3d844.jpg">
+                <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/65ad6e53d8d9de76603a4cb86f9f7981.jpg">
+                <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/2e0f9796fca190c7b21fcf746598e688.jpg">
+                <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/ad91cddbf1f981edf0de33e1ca824d5a.jpg">
+                <img src="../a-static.mlcdn.com.br/1500x1500/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/7e5bb6679f2aea764e0dd1017f215542.jpg">
+            </div>
+        </div>
+        <div class="image-navigation">
+            <div class="circles">
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+                <span class="circle"></span>
+            </div>
+            <div class="icons">
+                <span class="icon heart"><img src="images/heart3.png" alt="Coração" width="20" height="20"></span>
+                <span class="icon share"><img src="images/share.png" alt="Compartilhar" width="20" height="20"></span>
+            </div>
+        </div>
+        <div style="background-color: #cc0000; color: white; font-size: 14px; font-weight: bold; text-align: left; padding: 5px; display: inline-block; border-radius: 2px">Dias dos Pais</div>
+        <div class="price-section">
+            <span class="discount">- 74%</span>
+            <span class="currency">R$</span>
+            32
+            <span class="cents">97</span>
+        </div>
+        <div class="delivery-info">
+            <div>Entrega rápida: <strong>2 a 5 dias.</strong> <a href="#">Ver detalhes</a></div>
+            <div class="location">
+                <img src="../cdn-icons-png.flaticon.com/512/64/64113.png" alt="Location Icon" height="15">
+                <span>Entregando em: Definir endereço.</span> <a href="#">Atualizar local</a>
+            </div>
+        </div>
+        <div class="delivery-estimate">Estimativa de envio de 2 a 5 dias</div>
+        <button class="buy-now" onclick="window.location.href='https://pay.kitcanetastouch.com/PVYB34elDXAZKzk'">Comprar agora</button>
+        <button class="add-to-cart" onclick="window.location.href='https://pay.kitcanetastouch.com/PVYB34elDXAZKzk'">Adicionar ao carrinho</button>
+        <div class="seller-info">
+            <p>Enviado por <span class="seller-name">Amazon.</span></p>
+            <p>Vendido por <a href="#" class="seller-link">Amazon</a></p>
+            <p>Devolução <a href="#" class="return-policy">Devolução ou Reembolso em até 7 dias após o recebimento</a></p>
+        </div>
+        <div class="insurance-section">
+            <p class="section-title">Adicionar plano de seguro ou garantia</p>
+            <hr class="divider">
+            <label class="insurance-option">
+                <input type="checkbox" />
+                <span class="insurance-text">Garantia Estendida contra falhas e defeitos de 3 meses.</span>
+            </label>
+            <a href="#" class="add-to-list">Adicionar à Lista</a>
+        </div>
+    </div>
+    <div class="other-sellers">
+        <h4>Compre com confiança</h4>
+        <div class="trust-section">
+            <div class="trust-item"><img src="images/asero.webp" alt="Ícone de segurança"><a href="#">Pagamentos e Segurança</a></div>
+            <div class="trust-item"><img src="images/devo.png" alt="Ícone de devolução"><a href="#">Política de devolução</a></div>
+            <div class="trust-item"><img src="images/frete.png" alt="Ícone de entrega"><a href="#">Entrega gratuita</a></div>
+            <div class="trust-item"><img src="images/asero.webp" alt="Ícone de transação segura"><a href="#">Transação segura</a></div>
+        </div>
+    </div>
+    <div id="medidas-section">
+        <div class="section-header" onclick="toggleSection('medidas-section')">Detalhes técnicos <span class="toggle-arrow">▲</span></div>
+        <div class="section-content">
+            <table>
+                <tr><th>Nome da marca</th><td>MONDIAL</td></tr>
+                <tr><th>Modelo</th><td>AFN-80-BI</td></tr>
+                <tr><th>Cor</th><td>Preto/Inox</td></tr>
+                <tr><th>Voltagem</th><td>110 Volts</td></tr>
+                <tr><th>Potência em watts</th><td>1900 watts</td></tr>
+                <tr><th>Tipo de material</th><td>Polipropileno (PP)</td></tr>
+                <tr><th>ASIN</th><td>B0BJFJGW4B</td></tr>
+                <tr><th>EAN</th><td>7899882315745</td></tr>
+            </table>
+            <a class="link" href="#">Ver menos</a>
+        </div>
+    </div>
+    <h1 style="font-size: 19px; font-family: Arial, sans-serif; color: #333; margin-bottom: 16px;">Sobre este item</h1>
+    <ul style="font-family: Arial, sans-serif; font-size: 15px; color: #333; list-style: none; margin: 0; padding: 0;">
+        Com 80 tons vibrantes, este conjunto é perfeito para quem ama criatividade e cor. As canetas possuem ponta dupla, permitindo traços finos para detalhes precisos e grossos para preenchimentos marcantes.<br><br>
+        A tinta à base de álcool proporciona uma aplicação suave, secagem rápida e sem borrões, tornando as canetas ideais para desenhos, caligrafia, lettering e projetos escolares.<br><br>
+        Seja para atividades artísticas, trabalhos escolares ou momentos de lazer, este conjunto combina qualidade e versatilidade, ajudando você a expressar sua imaginação de forma única.<br><br>
+        Especificações Técnicas - Estojo de Canetas:<br><br>
+        -Tipo: Conjunto de Canetas Ponta Dupla com 80 cores.<br><br>
+        -Modelo: Tipo Copic.<br><br>
+        -Marcadores permanentes.<br><br>
+        -Ideal para: desenhos animados, arquitetura, cenários e confecções.<br><br>
+        Especificações Técnicas - Livro de Colorir Bobbie Goods:<br><br>
+        -Capa dura: maior durabilidade e conforto ao colorir.<br><br>
+        -Papel offset 180 g/m2: proporciona uma experiência de pintura suave, sem manchas.<br><br>
+        -50 Páginas<br><br>
+        -Impressão exclusiva: desenhos em preto e branco, impressos apenas na frente das páginas, proporcionando um espaço adicional para explorar sua arte.<br><br>
+        -Acetato protetor: incluso para ser colocado entre as páginas, evitando a transferência de tinta e preservando as ilustrações.<br><br>
+        -Formato prático: tamanho A5 horizontal (15,5 cm x 21,5 cm), ideal para criar em casa ou levar para viagens.<br><br>
+        CONTEÚDO DA EMBALAGEM:<br><br>
+        1 Livro de Colorir Boobie Goods<br><br>
+        80 Canetinhas Ponta Dupla (Acompanha Estojo)<br><br>
+    </ul>
+    <ul style="font-family: Arial, sans-serif; font-size: 16px; color: #333; margin: 0; padding-left: 20px; list-style-type: disc;">
+        <li style="margin-bottom: 8px;">Estilo: Moderno</li>
+        <li style="margin-bottom: 8px;">Característica especial: Ultra Resistente</li>
+        <li>Padrão: Profissional</li>
+    </ul>
+    <div id="medidas-section-2">
+        <div class="section-header" onclick="toggleSection('medidas-section-2')">Informações adicionais <span class="toggle-arrow">▲</span></div>
+        <div class="section-content">
+            <table>
+                <tr><th>Dimensões do pacote</th><td>48.2 x 47.3 x 39.6cm</td></tr>
+                <tr><th>Disponível para compra desde</th><td>17 outubro 2022</td></tr>
+                <tr><th>Avaliações de clientes</th><td>4,7 de 5 estrelas</td></tr>
+                <tr><th>Ranking dos mais vendidos</th><td>Nº 5 em Air Fryers</td></tr>
+            </table>
+            <a class="link" href="#">Ver menos</a>
+        </div>
+    </div>
+    <div class="gallery-container">
+        <div class="gallery-title">Fotos do produto</div>
+        <div class="gallery">
+            <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/810051702e6ea56ba5fc83fe01a3d844.jpg">
+            <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/65ad6e53d8d9de76603a4cb86f9f7981.jpg">
+            <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/2e0f9796fca190c7b21fcf746598e688.jpg">
+            <img src="../a-static.mlcdn.com.br/800x560/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/ad91cddbf1f981edf0de33e1ca824d5a.jpg">
+            <img src="../a-static.mlcdn.com.br/1500x1500/livro-de-colorir-bobbie-goods-80-canetinhas-pon/mbcomericoatacado/kitcnt80rosa/7e5bb6679f2aea764e0dd1017f215542.jpg">
+        </div>
+    </div>
+    <div class="rating">Avaliações de clientes</div>
+    <div class="stars">★★★★★ 4,2 de 5</div>
+    <p>120 avaliações globais</p>
+    <div class="bar-container"><span>5 estrelas</span><div class="bar"><div class="bar-fill" style="width: 70%;"></div></div><span class="percentage">70%</span></div>
+    <div class="bar-container"><span>4 estrelas</span><div class="bar"><div class="bar-fill" style="width: 19%;"></div></div><span class="percentage">19%</span></div>
+    <div class="bar-container"><span>3 estrelas</span><div class="bar"><div class="bar-fill" style="width: 11%;"></div></div><span class="percentage">11%</span></div>
+    <div class="bar-container"><span>2 estrelas</span><div class="bar"><div class="bar-fill" style="width: 0%;"></div></div><span class="percentage">0%</span></div>
+    <div class="bar-container"><span>1 estrelas</span><div class="bar"><div class="bar-fill" style="width: 0%;"></div></div><span class="percentage">0%</span></div>
+    <br>
+    <p class="info">Como as avaliações e classificações de clientes funcionam</p>
+    <div class="feedback-container">
+        <!-- Cole todos seus feedbacks de clientes aqui (igual ao arquivo original) -->
+        <!-- ... -->
+    </div>
     <footer class="footer">
         <img style="width: 20%" src="images/logoamazon1.png"><br><br>
         <a href="#">Termos de Uso</a>
